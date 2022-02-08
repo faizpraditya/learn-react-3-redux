@@ -27,7 +27,7 @@ const rootReducer = (state = initialState, action) => {
             age: state.age+1
         }
     }
-    if(action.type === "CHANE_NAME") {
+    if(action.type === "CHANGE_NAME") {
         return{
             ...state,
             name: action.newName,

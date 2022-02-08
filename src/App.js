@@ -1,10 +1,14 @@
 import logo from './logo.svg';
 import './App.css';
+import FirstCounter from './component/FirstCounter';
+import SecondCounter from './component/SecondCounter';
+import { connect } from 'react-redux';
+import Menu from './todo/Todo';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
+      {/* <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.js</code> and save to reload.
@@ -18,8 +22,17 @@ function App() {
           Learn React
         </a>
       </header>
+      <FirstCounter/><br/>
+      <SecondCounter/> */}
+      <Menu/>
     </div>
   );
 }
+const mapStateToProps = (state) => {
+    return {
+        // nama atribut bebas, bisa sama
+        number : state.globalNumber
+    }
+}
 
-export default App;
+export default connect(mapStateToProps)(App);
